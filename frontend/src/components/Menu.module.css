@@ -1,0 +1,15 @@
+.dropdown {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  width: auto;
+  list-style:none;
+  text-align: start;
+  border: 2px solid #000;
+  z-index: 100;
+  background: linear-gradient(to right, #3D52A0, #7091E6);
+  color: #fff;
+  overflow: scroll;
+  box-shadow: 5px 5px 5px #000;
+}

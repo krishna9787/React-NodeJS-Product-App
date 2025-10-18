@@ -1,0 +1,14 @@
+.subMenu {
+  color: #fff;
+  font-weight: 600;
+  font-size: clamp(1.5vh, calc(1.5vh + 1rem), 3vh);
+}
+
+.subMenu:hover {
+  visibility: visible;
+}
+
+.link {
+  color: #000;
+  text-decoration: none;
+}
