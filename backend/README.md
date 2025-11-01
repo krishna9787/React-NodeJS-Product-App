@@ -4,6 +4,7 @@ Developed By: Krishna Mohanan
 
 Built with
 NodeJS
+Sqlite3
 
 Getting started
 npm
