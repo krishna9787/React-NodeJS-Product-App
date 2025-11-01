@@ -1,11 +1,9 @@
-Project Name: Product App - Frontend
+Project Name: Product App - Backend
 
 Developed By: Krishna Mohanan
 
 Built with
-React
-Redux
-React Router
+NodeJS
 
 Getting started
 npm
@@ -14,8 +12,8 @@ npm install npm@latest -g
 Clone the repo
 git clone https://github.com/krishna9787/React-NodeJS-Product-App.git
 
-Go to frontend directory
-cd frontend
+Go to backend directory
+cd backend
 
 Install NPM packages
 npm install

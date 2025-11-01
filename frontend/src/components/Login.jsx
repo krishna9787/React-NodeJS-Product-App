@@ -1,10 +1,13 @@
 import style from "./Login.module.css"
 import { useState, useRef } from "react";
+import { useDispatch} from "react-redux";
 import { useNavigate, Form, useActionData, redirect } from "react-router-dom";
+import { authActions } from "../reducer/auth";
 
 const emailRegex = "/^[^\s@]+@[^\s@]+\.[^\s@]+$/"
 
 export async function action({request}) {
+
   const data = await request.formData()
     console.log("Sumitting data: ", data.get("email"))
     const formToJSON = {};
@@ -30,7 +33,6 @@ export async function action({request}) {
         const token = response.token
         console.log("Login successful", token)
         localStorage.setItem('token', token)
-        
         return redirect("/home")
       } else {
         // return redirect()
@@ -45,6 +47,7 @@ export async function action({request}) {
 
 export default function Login() {
   const data = useActionData();
+  const dispatch = useDispatch()
   const navigate = useNavigate();
   const isErrorDisplayed = useRef(false)
   const [formData, setFormData] = useState({
@@ -58,7 +61,11 @@ export default function Login() {
   })
 
 
-  if (data) isErrorDisplayed.current = true
+  if (data){
+    isErrorDisplayed.current = true
+  } else {
+    dispatch(authActions.login())
+  }
 
   function handleNavigation() {
     navigate("/signup")
