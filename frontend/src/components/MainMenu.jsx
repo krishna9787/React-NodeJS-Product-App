@@ -12,21 +12,15 @@ export default function MainMenu() {
   const modalRef= useRef()
   const navigate = useNavigate();
   function handleNavigation(event) {
-    navigate('/' + event.target.name)
+    const clickedItem = event.target.name
+    navigate('/' + clickedItem)
   }
-
   return (
     <div className={style.mainMenuContainer}>
       <nav className={style.navigation}>
-        {/* <ul className={style.menuItems}>
-          <li><button name="" onClick={handleNavigation}>Home</button></li>
-          <li><button name="books" on onClick={handleNavigation}>Books</button></li>
-          <li><button></button></li>
-          <li><button></button></li>
-        </ul> */}
         <ul className={style.menuItems}>
-              { MENU_LIST.map(item => <MenuItem key={item.sub} label={item.main}>
-                {item.sub && <Menu> {item.sub.map(val=> <MenuItem key={val} label={val} />)} </Menu>}
+              { MENU_LIST.map((item, index) => <MenuItem key={index} label={item.main}>
+                {<Menu> {item.sub.map(val=> <MenuItem label={val} />)} </Menu>}
               </MenuItem>
             )}
         </ul>
@@ -34,7 +28,6 @@ export default function MainMenu() {
          <ul className={style.menuItems}>
             <li><button name="cart" onClick={handleNavigation}>Cart</button></li>
             <li><button name="login" onClick={handleNavigation}>Login</button></li>
-            <li><button name="profile" onClick={handleNavigation}>Profile</button></li>
           </ul>
         </div>
       </nav>

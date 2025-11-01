@@ -6,7 +6,7 @@ import ProductPage, {action as productLoader} from './components/ProductPage'
 import ErrorPage from './components/ErrorPage'
 import RootLayout from './components/RootLayout'
 import CartModal from './components/CartModal'
-import ProductBySelection from './components/ProductBySelection'
+import ProductBySelection, {useLoader as productBySelectionLoader} from './components/ProductBySelection'
 
 function App() {
 
@@ -28,9 +28,9 @@ function App() {
               loader: productLoader,
             },
             {
-              path: ':productId',
-              id: 'productId',
+              path: ':label',
               element: <ProductBySelection />,
+              loader: productBySelectionLoader,
             }
           ]
         },
